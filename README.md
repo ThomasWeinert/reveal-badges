@@ -106,3 +106,6 @@ the defaults for a language badge or add individual badges.
 </pre>
 ```
   
+## Demo
+
+![Demo Image](https://raw.githubusercontent.com/ThomasWeinert/reveal-badges/master/doc/demo.png)
