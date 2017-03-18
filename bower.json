@@ -17,6 +17,7 @@
     "src/badges.css"
   ],
   "ignore": [
-    "**/.*"
+    "**/.*",
+    "doc"
   ]
 }
