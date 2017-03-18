@@ -1200,7 +1200,9 @@ var RevealBadges = window.RevealBadges || (function() {
         }
       } else {
         if (!container.getAttribute('data-badge')) {
-          container.setAttribute('data-badge', match[1]);
+          container.setAttribute(
+            'data-badge', match[1].toUpperCase()
+          );
         }
       }
     }
