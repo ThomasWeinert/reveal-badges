@@ -1,5 +1,5 @@
 # reveal-badges
-Badges for revael.js
+Badges for reveal.js
 
 After a talk, one of the attendees said that 
 it was sometimes a little difficult to put
@@ -7,7 +7,7 @@ source examples into the right context. He suggested
 to add the language to the slides.
 
 That seems to be a good idea, so I wrote a plugin that
-add a badge to code blocks.
+adds a badge to code blocks.
 
 If you use bower for your reveal.js presentations, you 
 can install the plugin using it.
