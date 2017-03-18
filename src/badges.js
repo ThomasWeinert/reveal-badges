@@ -9,15 +9,15 @@ var RevealBadges = window.RevealBadges || (function() {
     'c': {
       bg: 'red', fg: 'white'
     }
-  }
+  };
 
   var setUp = function(options, languages) {
     var positions = {
       'tl': 'topLeft',
       'tr': 'topRight',
       'bl': 'bottomLeft',
-      'br': 'bottomRight',
-    }
+      'br': 'bottomRight'
+    };
     var properties = {
       'bg': '',
       'fg': '',
@@ -48,7 +48,7 @@ var RevealBadges = window.RevealBadges || (function() {
       }
       badge = container.appendChild(
           document.createElement('span')
-      )
+      );
       badge.appendChild(
           document.createTextNode(
               badgeParents[i].getAttribute('data-badge')
@@ -74,12 +74,12 @@ var RevealBadges = window.RevealBadges || (function() {
         badge.setAttribute('style', badgeStyle);
       }
     }
-  }
+  };
 
   var addLanguageBadge = function(code, languages) {
     var properties = ['bg', 'fg', 'position', 'class'];
     var container = code.parentNode;
-    var match, language, settings, i, attributeName, currentValue;
+    var match, language, settings, i, attributeName;
     if (match = code.getAttribute('class').match(/\blanguage-(\S+)/)) {
       language = match[1].toLowerCase();
       if (false === languages[language]) {
@@ -108,7 +108,7 @@ var RevealBadges = window.RevealBadges || (function() {
         }
       }
     }
-  }
+  };
 
   var scriptPath = function() {
     // obtain plugin path from the script element
@@ -119,11 +119,11 @@ var RevealBadges = window.RevealBadges || (function() {
     } else {
       var scriptTag = document.querySelector('script[src$="/badges.js"]');
       if (scriptTag) {
-        path = sel.src.slice(0, end);
+        path = scriptTag.src.slice(0, end);
       }
     }
     return path;
-  }
+  };
 
   var merge = function() {
     var result = {}, i, key, source;
@@ -145,7 +145,7 @@ var RevealBadges = window.RevealBadges || (function() {
       }
     }
     return result;
-  }
+  };
 
   var config = Reveal.getConfig() || {};
   config.badges = config.badges || {};
@@ -153,7 +153,7 @@ var RevealBadges = window.RevealBadges || (function() {
     path: config.badges.path || scriptPath() || 'plugin/language-badges',
     languages: config.badges.languages,
     defaults: config.badges.defaults || {}
-  }
+  };
   if (options.languages instanceof Object) {
     languages = merge(languages, options.languages);
   }
