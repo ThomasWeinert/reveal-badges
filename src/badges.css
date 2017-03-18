@@ -6,14 +6,13 @@
   display: block;
 
   background-color: #000000;
-  background-color: attr(data-badge-color);
+  color: #FFFFFF;
 
   border: 1px solid black;
   box-shadow: 2px 2px 4px rgba(0, 0,0, 0.5);
   padding: 6px 10px;
   border-radius: 10px;
 
-  color: #FFFFFF;
   font-size: 40px;
   font-weight: bold;
   text-transform: uppercase;
