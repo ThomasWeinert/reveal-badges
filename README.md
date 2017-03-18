@@ -18,15 +18,15 @@ bower install --save reveal-badges
 
 After that add it to the dependencies section in your HTML file.
 
-```
+```javascript
 dependencies: [
   { src: 'bower_components/reveal-badges/src/badges.js' },
-  ... 
+  //... 
 ```
 
 ## Options
 
-```
+```javascript
 badges: {
   path: '/path/to/plugin',
   defaults: {
@@ -69,11 +69,11 @@ It will use the language from the class name as text for the badge.
 You can use this property to configure the badge for a specific 
 language, too. 
 
-```
+```javascript
 {
   languages: {
-    'php': {
-      label: 'PHP 7'
+    php: {
+      label: 'PHP 7',
       fg: 'white',
       bg: 'black',
       position: 'tr'
@@ -86,10 +86,10 @@ language, too.
 
 To disable the badge for a specific language, set it to `false`.
 
-```json
+```javascript
 {
   languages: {
-    'plaintext' : false
+    plaintext : false
   }
 }
 ```
@@ -105,5 +105,4 @@ the defaults for a language badge or add individual badges.
   <code class="language-php">...</code>
 </pre>
 ```
-  
   
