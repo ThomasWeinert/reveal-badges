@@ -28,7 +28,7 @@ var RevealBadges = window.RevealBadges || (function() {
     ags: {
       bg: '#B9D9FF',
       fg: '#000000',
-      label: 'AGS%20Script'
+      label: 'AGS Script'
     },
     alloy: {
       bg: '#64C800',
@@ -293,7 +293,7 @@ var RevealBadges = window.RevealBadges || (function() {
     emacslisp: {
       bg: '#c065db',
       fg: '#000000',
-      label: 'Emacs%20Lisp'
+      label: 'Emacs Lisp'
     },
     emberscript: {
       bg: '#FFF4F3',
@@ -388,7 +388,7 @@ var RevealBadges = window.RevealBadges || (function() {
     grammaticalframework: {
       bg: '#79aa7a',
       fg: '#000000',
-      label: 'Grammatical%20Framework'
+      label: 'Grammatical Framework'
     },
     groff: {
       bg: '#ecdebe',
