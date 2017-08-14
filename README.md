@@ -1,6 +1,8 @@
 # reveal-badges
 Badges for reveal.js
 
+![Demo Image](https://raw.githubusercontent.com/ThomasWeinert/reveal-badges/master/doc/demo.png)
+
 After a talk, one of the attendees said that 
 it was sometimes a little difficult to put
 source examples into the right context. He suggested
@@ -105,7 +107,3 @@ the defaults for a language badge or add individual badges.
   <code class="language-php">...</code>
 </pre>
 ```
-  
-## Demo
-
-![Demo Image](https://raw.githubusercontent.com/ThomasWeinert/reveal-badges/master/doc/demo.png)
