@@ -1,0 +1,105 @@
+<html>
+<head>
+  <title>Badges Example</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
+  <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+  <style type="text/css">
+    .badge.demo:before {
+      content: "📌";
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>Badge Examples</h2>
+    </section>
+    <section>
+      <section>
+        <h2>Automatic</h2>
+        <p>Badges are added to code blocks according to the highlighting class.</p>
+        <pre><code class="language-javascript">{
+  languages : true
+}</code></pre>
+      </section>
+      <section>
+        <pre><code class="language-php">echo "Hello World!";</code></pre>
+      </section>
+      <section>
+        <pre><code class="language-ruby">puts 'Hello, world!'</code></pre>
+      </section>
+      <section>
+        <h3>Reconfigure</h3>
+        <pre><code class="language-javascript">languages: {
+  php: {
+    label: 'PHP 7',
+    fg: 'white',
+    bg: 'black',
+    position: 'tr'
+  },
+  plainttext: false
+}</code></pre>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Manual</h2>
+        <pre data-badge="PHP Example" data-badge-bg="darkgreen" data-badge-fg="white"><code class="language-php">echo "Hello World!";</code></pre>
+        <p><b>data-badge*</b> attributes take priority</p>
+        <ul>
+          <li>data-badge - text</li>
+          <li>data-badge-fg - text color</li>
+          <li>data-badge-bg - background color</li>
+          <li>data-badge-position - tl, tr, bl, br</li>
+          <li>data-badge-class - additional css classes</li>
+        </ul>
+      </section>
+      <section>
+        <div style="width: 80%; margin: auto;" data-badge="Hello!">
+          <br>
+          You can add them to any block...
+          <br>
+          <br>
+        </div>
+      </section>
+      <section>
+        <div style="width: 80%; margin: auto;" data-badge="Left" data-badge-position="tl">
+          <br>
+          ... at different corners ...
+          <br>
+          <br>
+        </div>
+      </section>
+      <section>
+        <div style="width: 80%; margin: auto;" data-badge="DEMO" data-badge-class="demo">
+          <br>
+          ... with individual css classes
+          <br>
+          <br>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
+
+<script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+<script src="bower_components/reveal.js/js/reveal.js"></script>
+<script>
+  Reveal.initialize(
+      {
+          dependencies: [
+            { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../src/badges.js' }
+          ],
+          badges: {
+            languages: true
+          }
+      }
+  );
+</script>
+</body>
+</html>

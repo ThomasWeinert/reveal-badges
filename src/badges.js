@@ -28,7 +28,7 @@ var RevealBadges = window.RevealBadges || (function() {
     ags: {
       bg: '#B9D9FF',
       fg: '#000000',
-      label: 'AGS Script'
+      label: 'AGS%20Script'
     },
     alloy: {
       bg: '#64C800',
@@ -293,7 +293,7 @@ var RevealBadges = window.RevealBadges || (function() {
     emacslisp: {
       bg: '#c065db',
       fg: '#000000',
-      label: 'Emacs Lisp'
+      label: 'Emacs%20Lisp'
     },
     emberscript: {
       bg: '#FFF4F3',
@@ -388,7 +388,7 @@ var RevealBadges = window.RevealBadges || (function() {
     grammaticalframework: {
       bg: '#79aa7a',
       fg: '#000000',
-      label: 'Grammatical Framework'
+      label: 'Grammatical%20Framework'
     },
     groff: {
       bg: '#ecdebe',
@@ -1107,7 +1107,7 @@ var RevealBadges = window.RevealBadges || (function() {
     }
   };
 
-  var setUp = function(options, languages) {
+  var update = function(node, options, languages) {
     var positions = {
       'tl': 'topLeft',
       'tr': 'topRight',
@@ -1124,12 +1124,12 @@ var RevealBadges = window.RevealBadges || (function() {
     var badge, container, badgeClass, badgeStyle;
 
     if (options.languages) {
-      var blocks = document.querySelectorAll('pre > code');
+      var blocks = node.querySelectorAll('pre > code');
       for (i = 0; i < blocks.length; i++) {
         addLanguageBadge(blocks[i], languages);
       }
     }
-    var badgeParents = document.querySelectorAll('[data-badge]');
+    var badgeParents = node.querySelectorAll('[data-badge]');
     for (i = 0; i < badgeParents.length; i++) {
       container = badgeParents[i];
       for (key in properties) {
@@ -1141,6 +1141,9 @@ var RevealBadges = window.RevealBadges || (function() {
         } else {
           properties[key] = '';
         }
+      }
+      if (container.querySelector('span.badge')) {
+        return;
       }
       badge = container.appendChild(
           document.createElement('span')
@@ -1158,15 +1161,15 @@ var RevealBadges = window.RevealBadges || (function() {
         badgeClass += ' ' + positions[properties.position];
       }
       badgeStyle = '';
-      if (properties.fg != '') {
+      if (properties.fg !== '') {
         badgeStyle += 'color: ' + properties.fg + ';';
       }
-      if (properties.bg != '') {
+      if (properties.bg !== '') {
         badgeStyle += 'background-color: ' + properties.bg + ';';
       }
 
       badge.setAttribute('class', badgeClass);
-      if (badgeStyle != '') {
+      if (badgeStyle !== '') {
         badge.setAttribute('style', badgeStyle);
       }
     }
@@ -1201,7 +1204,7 @@ var RevealBadges = window.RevealBadges || (function() {
       } else {
         if (!container.getAttribute('data-badge')) {
           container.setAttribute(
-            'data-badge', match[1].toUpperCase()
+              'data-badge', match[1].toUpperCase()
           );
         }
       }
@@ -1232,7 +1235,7 @@ var RevealBadges = window.RevealBadges || (function() {
           continue;
         }
         try {
-          if (source[key].constructor == Object) {
+          if (source[key].constructor === Object) {
             result[key] = merge(result[key], source[key]);
           } else {
             result[key] = source[key];
@@ -1261,5 +1264,11 @@ var RevealBadges = window.RevealBadges || (function() {
   resource.href = options.path + '/badges.css';
   document.querySelector("head").appendChild(resource);
 
-  setUp(options, languages);
+  update(document, options, languages);
+  Reveal.addEventListener(
+      'slidechanged',
+      function(event) {
+        update(event.currentSlide, options, languages);
+      }
+  );
 })();

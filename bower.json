@@ -1,6 +1,5 @@
 {
   "name": "reveal-badges",
-  "version": "0.1.0",
   "description": "Add badges to blocks in a reveal.js presentation",
   "homepage": "https://github.com/thomasweinert/reveal-badges",
   "license": "MIT",
@@ -18,6 +17,7 @@
   ],
   "ignore": [
     "**/.*",
-    "doc"
+    "doc",
+    "example"
   ]
 }
