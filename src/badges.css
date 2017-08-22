@@ -13,8 +13,10 @@
   padding: 6px 10px;
   border-radius: 10px;
 
-  font-size: 40px;
+  font-family: sans-serif;
+  font-size: 38px;
   font-weight: bold;
+  line-height: 1em;
 
   content: attr(data-badge);
 
