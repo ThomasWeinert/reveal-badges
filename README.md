@@ -21,23 +21,34 @@ bower install --save reveal-badges
 After that add it to the dependencies section in your HTML file.
 
 ```javascript
-dependencies: [
-  { src: 'bower_components/reveal-badges/src/badges.js' },
-  //... 
+Reveal.initialize(
+  {
+    dependencies: [
+      { src: 'bower_components/reveal-badges/src/badges.js' },
+      //...
+    ]
+  }
+);
 ```
 
 ## Options
 
 ```javascript
-badges: {
-  path: '/path/to/plugin',
-  defaults: {
-    bg: 'black',
-    fg: 'white',
-    position: 'tr'
-  },
-  languages: false
-}
+Reveal.initialize(
+  {
+    // ...
+    badges: {
+      path: '/path/to/plugin',
+      defaults: {
+        bg: 'black',
+        fg: 'white',
+        position: 'tr'
+      },
+      languages: false
+    }
+    // ...
+  }
+);
 ```
 
 ### Path
@@ -72,16 +83,22 @@ You can use this property to configure the badge for a specific
 language, too. 
 
 ```javascript
-{
-  languages: {
-    php: {
-      label: 'PHP 7',
-      fg: 'white',
-      bg: 'black',
-      position: 'tr'
+Reveal.initialize(
+  {
+    // ...
+    badges: {
+      languages: {
+        php: {
+          label: 'PHP 7',
+          fg: 'white',
+          bg: 'black',
+          position: 'tr'
+        }
+      }
     }
+    // ...
   }
-}
+);
 ```
 
 #### Disable
@@ -89,11 +106,17 @@ language, too.
 To disable the badge for a specific language, set it to `false`.
 
 ```javascript
-{
-  languages: {
-    plaintext : false
+Reveal.initialize(
+  {
+    // ...
+    badges: {
+      languages: {
+        plaintext : false
+      }
+    }
+    // ...
   }
-}
+);
 ```
 
 ## Data Attributes
