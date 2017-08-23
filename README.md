@@ -107,3 +107,11 @@ the defaults for a language badge or add individual badges.
   <code class="language-php">...</code>
 </pre>
 ```
+
+### Available Attributes
+
+* data-badge - text
+* data-badge-fg - text color
+* data-badge-bg - background color
+* data-badge-position - tr (default), tl, br, bl
+* data-badge-class - additional css classes
