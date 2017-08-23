@@ -1,5 +1,5 @@
 # reveal-badges
-Badges for reveal.js - [Live Demo](https://rawgit.com/ThomasWeinert/reveal-badges/master/example/index.html)
+Badges for reveal.js - [Live Demo](http://thomas.weinert.info/reveal-badges/master/example/index.html)
 
 ![Demo Image](https://raw.githubusercontent.com/ThomasWeinert/reveal-badges/master/doc/demo.png)
 

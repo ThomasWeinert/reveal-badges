@@ -1,7 +1,7 @@
 {
   "name": "reveal-badges",
   "description": "Add badges to blocks in a reveal.js presentation",
-  "homepage": "https://github.com/thomasweinert/reveal-badges",
+  "homepage": "http://thomas.weinert.info/reveal-badges/",
   "license": "MIT",
   "authors": [
     "Thomas Weinert <thomas@weinert.info>"
