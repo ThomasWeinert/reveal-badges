@@ -1179,7 +1179,8 @@ var RevealBadges = window.RevealBadges || (function() {
     var properties = ['bg', 'fg', 'position', 'class'];
     var container = code.parentNode;
     var match, language, settings, i, attributeName;
-    if (match = code.getAttribute('class').match(/\blanguage-(\S+)/)) {
+    var classString = code.getAttribute('class') || '';
+    if (match = classString.match(/\blanguage-(\S+)/)) {
       language = match[1].toLowerCase();
       if (false === languages[language]) {
         return;
