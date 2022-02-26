@@ -1206,10 +1206,11 @@
         if ( match = classString.match(/\b(language-(\b))?\b(\S+)/) )  {        
           language = match[3].toLowerCase();
 
-          if (false === languages[language]) {
+          // return if class is 'hljs' (highlight.js)
+          if (false === languages[language] | language=='hljs') {
             return;
           }
-
+        
           if (settings = languages[language]) {
             if (!container.getAttribute('data-badge')) {
               container.setAttribute(
