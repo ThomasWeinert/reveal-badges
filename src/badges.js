@@ -1202,9 +1202,9 @@
         var properties = ['bg', 'fg', 'position', 'class'];
         var container = code.parentNode;
         var match, language, settings, i, attributeName;
-        var classString = code.getAttribute('class') || '';
-        if (match = classString.match(/\blanguage-(\S+)/)) {
-          language = match[1].toLowerCase();
+        var classString = code.getAttribute('class') || '';       
+        if ( match = classString.match(/\b(language-(\b))?\b(\S+)/) )  {        
+          language = match[3].toLowerCase();
 
           if (false === languages[language]) {
             return;
@@ -1230,7 +1230,7 @@
           } else {
             if (!container.getAttribute('data-badge')) {
               container.setAttribute(
-                'data-badge', match[1].toUpperCase()
+                'data-badge', language.toUpperCase()
               );
             }
           }
