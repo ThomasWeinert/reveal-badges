@@ -1,7 +1,0 @@
-{
-  "name": "reveal-badges-example",
-  "private": true,
-  "dependencies": {
-    "reveal.js": "^3.5.0"
-  }
-}

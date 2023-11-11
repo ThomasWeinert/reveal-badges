@@ -10,54 +10,38 @@ to add the language to the slides.
 That seems to be a good idea, so I wrote a plugin that
 adds a badge to code blocks.
 
-If you use bower for your reveal.js presentations, you 
-can install the plugin using it.
-
 ```
-bower install --save reveal-badges
+npm i @thomasweinert/reveal-badges
 ```
 
-After that add it to the dependencies section in your HTML file.
+After that add it to the plugins.
 
 ```javascript
-Reveal.initialize(
-  {
-    dependencies: [
-      { src: 'bower_components/reveal-badges/src/badges.js' },
-      //...
-    ]
-  }
-);
+const deck = new Reveal(
+    {
+        plugins: [ Markdown, Highlight, Badges ]
+    }
+)
 ```
 
 ## Options
 
 ```javascript
-Reveal.initialize(
+deck.initialize(
   {
     // ...
     badges: {
-      path: '/path/to/plugin',
       defaults: {
         bg: 'black',
         fg: 'white',
         position: 'tr'
-      },
-      languages: false
+      }, 
+      languages: true
     }
     // ...
   }
 );
 ```
-
-### Path
-
-`@var {string} path`
-
-The plugin will try to recognize its installation path
-automatically. If that doe not work correctly, you can
-provide the path, that will be used to include additional
-plugin files.
 
 ### Defaults
 
@@ -82,7 +66,7 @@ You can use this property to configure the badge for a specific
 language, too. 
 
 ```javascript
-Reveal.initialize(
+deck.initialize(
   {
     // ...
     badges: {
@@ -105,7 +89,7 @@ Reveal.initialize(
 To disable the badge for a specific language, set it to `false`.
 
 ```javascript
-Reveal.initialize(
+deck.initialize(
   {
     // ...
     badges: {
