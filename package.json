@@ -15,6 +15,7 @@
   ],
   "files": [
     "src/badges.js",
+    "src/languages.js",
     "src/badges.css"
   ],
   "ignore": [
